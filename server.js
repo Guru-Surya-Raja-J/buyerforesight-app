@@ -19,8 +19,13 @@ app.use(express.static(path.join(__dirname, 'dist'))); // Serve Vite build outpu
 app.use('/users', userRoutes);
 
 // Any other route should serve the React app (Client-side routing fallback)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// We use a middleware to avoid Express 5 wildcard regex syntax errors
+app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/users')) {
+        res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    } else {
+        res.status(404).json({ error: 'Not Found' });
+    }
 });
 
 // Start server
