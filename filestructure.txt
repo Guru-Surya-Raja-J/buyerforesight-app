@@ -1,0 +1,32 @@
+|-- .env
+|-- .gitignore
+|-- controllers
+    |-- userController.js
+|-- database.js
+|-- database.sqlite
+|-- eslint.config.js
+|-- fix-db.js
+|-- index.html
+|-- package-lock.json
+|-- package.json
+|-- public
+    |-- app.js
+    |-- favicon.svg
+    |-- icons.svg
+    |-- index.html
+    |-- styles.css
+|-- README.md
+|-- routes
+    |-- users.js
+|-- server.js
+|-- src
+    |-- App.css
+    |-- App.jsx
+    |-- assets
+        |-- hero.png
+        |-- react.svg
+        |-- vite.svg
+    |-- index.css
+    |-- main.jsx
+|-- test.js
+|-- vite.config.js
